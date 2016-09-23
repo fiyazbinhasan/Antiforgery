@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MVC.XSRF.Models.Transaction>
+@{
+    ViewBag.Title = "WHB - What Happened Bank!?!?!";
+}
+<div class="container">
+    <div class="row">
+        <h1 class="text-center text-danger">
+            <strong>WHB</strong>
+        </h1>
+        <h3 class="text-center text-danger">What Happened Bank!?!?!</h3>
+        <div class="text-center">
+            <em>"you wouldn't know what just happened"</em>
+        </div>
+    </div>
+    <div class="row">
+        <p class="text-center">
+            <a class="btn btn-primary" asp-action="Add">Make a transaction</a>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-warning">
+                <div class="panel-heading">Transactions</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Account.AccountNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TransactionType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TransactionAmount)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Account.CurrentBalance)
+                            </th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Account.AccountNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TransactionType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TransactionAmount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Account.CurrentBalance)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

