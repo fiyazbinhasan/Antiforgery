@@ -69,10 +69,9 @@
     <script src="app/transaction/transaction.service.js"></script>
 
     <!--Using Javascript Ajax-->
-    <script src="lib/jquery/dist/jquery.js"></script>
+    <!--<script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/jquery-cookie/jquery.cookie.js"></script>
     <script>
-        debugger;
         var csrfToken = $.cookie("CSRF-TOKEN");
         $.ajax({
             url: "/api/transaction",
@@ -83,6 +82,6 @@
                 "X-CSRF-TOKEN": csrfToken
             }
         });
-    </script>
+    </script>-->
 </body>
 </html>

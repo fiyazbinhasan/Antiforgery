@@ -11,7 +11,7 @@ namespace XSRF.ANGULAR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
-            services.AddAntiforgery(options => options.HeaderName = "X-CSRF-TOKEN");
+            //services.AddAntiforgery(options => options.HeaderName = "X-CSRF-TOKEN"); /* for ajax requests */
             services.AddMvc();
             services.AddSingleton<ITransactionRepository, TransactionRepository>();
         }
@@ -26,7 +26,7 @@ namespace XSRF.ANGULAR
                 {
                     var tokens = antiforgery.GetAndStoreTokens(context);
                     context.Response.Cookies.Append("XSRF-TOKEN", tokens.RequestToken, new Microsoft.AspNetCore.Http.CookieOptions { HttpOnly = false});
-                    context.Response.Cookies.Append("CSRF-TOKEN", tokens.RequestToken, new Microsoft.AspNetCore.Http.CookieOptions { HttpOnly = false });
+                    //    context.Response.Cookies.Append("CSRF-TOKEN", tokens.RequestToken, new Microsoft.AspNetCore.Http.CookieOptions { HttpOnly = false }); /* for ajax requests */
                 }
 
                 return next(context);
